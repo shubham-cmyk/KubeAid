@@ -70,12 +70,6 @@ spec:
             - name: tmp
               mountPath: /tmp
           {{- with .Values.deployment.probes.readiness }}
-          readinessProbe:
-            {{- toYaml . | nindent 12 }}
-          {{- end }}
-          {{- with .Values.deployment.probes.liveness }}
-          livenessProbe:
-            {{- toYaml . | nindent 12 }}
           {{- end }}
           {{- with .Values.deployment.resources }}
           resources:
